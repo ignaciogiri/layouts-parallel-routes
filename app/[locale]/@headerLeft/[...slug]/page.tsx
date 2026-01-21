@@ -1,14 +1,16 @@
+"use client"
+
 import Link from "next/link"
 import type { Route } from "next"
-import { getTranslations } from "next-intl/server"
-import { ArrowLeft } from "lucide-react"
+import { useTranslations } from "next-intl"
+import { useParams } from "next/navigation"
 import { MountIndicator } from "@/components/mount-indicator"
 import { BackButton } from "@/components/back-button"
 
-export default async function HeaderLeftSlot({ params }: { params: Promise<{ slug: string[] }> }) {
-  const t = await getTranslations("common")
-  const { slug } = await params
-  const path = slug.join("/")
+export default function HeaderLeftSlot() {
+  const params = useParams<{ slug: string[] }>()
+  const t = useTranslations("common")
+  const path = params.slug?.join("/") ?? ""
 
   switch (path) {
     case "about":

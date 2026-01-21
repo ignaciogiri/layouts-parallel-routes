@@ -1,12 +1,15 @@
-import { getTranslations } from "next-intl/server"
+"use client"
+
+import { useTranslations } from "next-intl"
+import { useParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Share } from "lucide-react"
 import { MountIndicator } from "@/components/mount-indicator"
 
-export default async function HeaderRightSlot({ params }: { params: Promise<{ slug: string[] }> }) {
-  const t = await getTranslations("common")
-  const { slug } = await params
-  const path = slug.join("/")
+export default function HeaderRightSlot() {
+  const params = useParams<{ slug: string[] }>()
+  const t = useTranslations("common")
+  const path = params.slug?.join("/") ?? ""
 
   switch (path) {
     case "about":

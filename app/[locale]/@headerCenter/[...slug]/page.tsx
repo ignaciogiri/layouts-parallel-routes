@@ -1,13 +1,16 @@
+"use client"
+
 import Link from "next/link"
 import type { Route } from "next"
-import { getTranslations } from "next-intl/server"
+import { useTranslations } from "next-intl"
+import { useParams } from "next/navigation"
 import { SearchBox } from "@/components/search-box"
 import { MountIndicator } from "@/components/mount-indicator"
 
-export default async function HeaderCenterSlot({ params }: { params: Promise<{ slug: string[] }> }) {
-  const t = await getTranslations("header")
-  const { slug } = await params
-  const path = slug.join("/")
+export default function HeaderCenterSlot() {
+  const params = useParams<{ slug: string[] }>()
+  const t = useTranslations("header")
+  const path = params.slug?.join("/") ?? ""
 
   switch (path) {
     case "about":

@@ -5,7 +5,7 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const nextConfig: NextConfig = {
 	typedRoutes: true,
-	cacheComponents: false,
+	cacheComponents: true,
 };
 
 export default withNextIntl(nextConfig);

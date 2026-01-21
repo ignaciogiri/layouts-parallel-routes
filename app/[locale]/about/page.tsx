@@ -1,7 +1,11 @@
-import { getTranslations } from "next-intl/server"
+import { useTranslations } from "next-intl"
+import { setRequestLocale } from "next-intl/server"
+import { use } from "react"
 
-export default async function AboutPage() {
-  const t = await getTranslations("pages.about")
+export default function AboutPage({ params }: PageProps<"/[locale]/about">) {
+  const { locale } = use(params)
+  setRequestLocale(locale)
+  const t = useTranslations("pages.about")
 
   return (
     <div className="space-y-4">

@@ -1,7 +1,11 @@
-import { getTranslations } from "next-intl/server"
+import { useTranslations } from "next-intl"
+import { setRequestLocale } from "next-intl/server"
+import { use } from "react"
 
-export default async function EditorPage() {
-  const t = await getTranslations("pages.editor")
+export default function EditorPage({ params }: PageProps<"/[locale]/editor">) {
+  const { locale } = use(params)
+  setRequestLocale(locale)
+  const t = useTranslations("pages.editor")
 
   return (
     <div className="space-y-4">
