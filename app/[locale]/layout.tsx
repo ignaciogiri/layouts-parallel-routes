@@ -5,6 +5,7 @@ import { notFound } from "next/navigation"
 import { routing } from "@/i18n/routing"
 import { LocaleSwitcher } from "@/components/locale-switcher"
 import { MountIndicator } from "@/components/mount-indicator"
+import { RouteNav } from "@/components/route-nav"
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -55,8 +56,13 @@ export default async function LocaleLayout({
               </div>
             </div>
           </header>
-          <main>
-            <Suspense>{children}</Suspense>
+          <main className="grid grid-cols-[520px_1fr]">
+            <aside className="border-r min-h-[calc(100vh-4rem)] p-6 overflow-auto">
+              <RouteNav />
+            </aside>
+            <div className="p-6">
+              <Suspense>{children}</Suspense>
+            </div>
           </main>
         </NextIntlClientProvider>
       </body>

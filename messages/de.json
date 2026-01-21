@@ -1,4 +1,26 @@
 {
+  "pages": {
+    "home": {
+      "title": "Startseite",
+      "description": "Willkommen zur Parallelen-Routen-Demo. Navigiere über die Seitenleiste, um zu sehen, wie sich die Header-Slots verhalten."
+    },
+    "about": {
+      "title": "Über uns",
+      "description": "Diese Seite zeigt eine andere Header-Konfiguration mit Zurück-Button und Teilen-Aktion."
+    },
+    "editor": {
+      "title": "Editor",
+      "description": "Die Editor-Seite zeigt einen minimalen Header mit nur dem zentrierten Logo."
+    },
+    "settings": {
+      "title": "Einstellungen",
+      "description": "Die Einstellungsseite verwendet denselben Header wie die Startseite. Beobachte, ob die SearchBox beim Navigieren neu gemountet wird."
+    },
+    "profile": {
+      "title": "Profil",
+      "description": "Die Profilseite verwendet ebenfalls denselben Header wie die Startseite. Die SearchBox sollte idealerweise gemountet bleiben."
+    }
+  },
   "common": {
     "signIn": "Anmelden",
     "share": "Teilen",

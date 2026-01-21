@@ -1,4 +1,26 @@
 {
+  "pages": {
+    "home": {
+      "title": "Home",
+      "description": "Welcome to the parallel routes demo. Navigate using the sidebar to see how header slots behave."
+    },
+    "about": {
+      "title": "About",
+      "description": "This page demonstrates a different header configuration with a back button and share action."
+    },
+    "editor": {
+      "title": "Editor",
+      "description": "The editor page shows a minimal header with just the logo centered."
+    },
+    "settings": {
+      "title": "Settings",
+      "description": "Settings page uses the same header as Home. Watch if the SearchBox remounts when navigating here."
+    },
+    "profile": {
+      "title": "Profile",
+      "description": "Profile page also uses the same header as Home. The SearchBox should ideally stay mounted."
+    }
+  },
   "common": {
     "signIn": "Sign in",
     "share": "Share",

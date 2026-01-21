@@ -42,8 +42,8 @@ export function RouteNav() {
   const pathname = usePathname()
   const router = useRouter()
   const t = useTranslations("demo")
-  // Remove locale prefix for comparison
-  const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, "") || "/"
+  // With localePrefix: "never", pathname doesn't include locale
+  // It's already just "/settings" not "/en/settings"
 
   const handleNavigation = (path: Route) => {
     router.push(path, {
@@ -53,11 +53,10 @@ export function RouteNav() {
   }
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center p-4">
-      <div className="w-full max-w-lg space-y-6">
-        <div>
-          <h1 className="text-2xl font-bold">{t("title")}</h1>
-          <p className="text-muted-foreground text-sm mt-1">
+    <div className="space-y-4">
+      <div>
+        <h1 className="text-2xl font-bold">{t("title")}</h1>
+        <p className="text-muted-foreground text-sm mt-1">
             {t("current")}: <code className="bg-muted px-1.5 py-0.5 rounded font-mono">{pathname}</code>
           </p>
         </div>
@@ -65,24 +64,30 @@ export function RouteNav() {
         <div className="border rounded-lg overflow-hidden">
           <div className="flex items-center gap-4 p-3 bg-muted/50 text-xs text-muted-foreground font-medium border-b">
             <span className="w-20">{t("route")}</span>
-            <span className="flex-1 text-center">{t("expectedHeader")}</span>
+            <span className="flex-1">{t("expectedHeader")}</span>
           </div>
-          {routes.map(({ path, left, center, right }) => (
-            <button
-              key={path}
-              onClick={() => handleNavigation(path)}
-              className={`w-full flex items-center gap-4 p-3 border-b last:border-b-0 hover:bg-muted/50 text-left ${
-                pathWithoutLocale === path ? "bg-muted" : ""
-              }`}
-            >
-              <code className="font-mono text-sm w-20">{path}</code>
-              <div className="flex-1 flex items-center justify-between px-3 py-2 bg-muted/30 rounded border text-muted-foreground">
-                {left}
-                {center}
-                {right}
-              </div>
-            </button>
-          ))}
+          {routes.map(({ path, left, center, right }) => {
+            const isActive = pathname === path
+            return (
+              <button
+                key={path}
+                onClick={() => handleNavigation(path)}
+                className={`relative w-full flex items-center gap-4 p-3 border-b last:border-b-0 hover:bg-muted/50 text-left ${
+                  isActive ? "bg-purple-500/10" : ""
+                }`}
+              >
+                {isActive && (
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-purple-500" />
+                )}
+                <code className={`font-mono text-sm w-20 ${isActive ? "text-purple-600 font-semibold" : ""}`}>{path}</code>
+                <div className="flex-1 flex items-center justify-between px-3 py-2 bg-muted/30 rounded border text-muted-foreground">
+                  {left}
+                  {center}
+                  {right}
+                </div>
+              </button>
+            )
+          })}
         </div>
 
         <div className="p-4 rounded-lg bg-muted/50 border text-sm space-y-2">
@@ -97,7 +102,6 @@ export function RouteNav() {
           <p className="text-muted-foreground"><strong>{t.rich("expected.title", { code: (c) => <code className="bg-muted px-1 rounded text-xs">{c}</code> })}:</strong> {t.rich("expected.description", { code: (c) => <code className="bg-muted px-1 rounded text-xs">{c}</code> })}</p>
           <p className="text-xs text-muted-foreground pt-2 border-t">{t("mountIndicator")}</p>
         </div>
-      </div>
     </div>
   )
 }

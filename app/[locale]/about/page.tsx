@@ -1,5 +1,12 @@
-import { RouteNav } from "@/components/route-nav"
+import { getTranslations } from "next-intl/server"
 
-export default function AboutPage() {
-  return <RouteNav />
+export default async function AboutPage() {
+  const t = await getTranslations("pages.about")
+
+  return (
+    <div className="space-y-4">
+      <h1 className="text-2xl font-bold">{t("title")}</h1>
+      <p className="text-muted-foreground">{t("description")}</p>
+    </div>
+  )
 }

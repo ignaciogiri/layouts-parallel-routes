@@ -1,4 +1,26 @@
 {
+  "pages": {
+    "home": {
+      "title": "Inicio",
+      "description": "Bienvenido a la demo de rutas paralelas. Navega usando la barra lateral para ver cómo se comportan los slots del header."
+    },
+    "about": {
+      "title": "Acerca de",
+      "description": "Esta página demuestra una configuración diferente del header con botón de retroceso y acción de compartir."
+    },
+    "editor": {
+      "title": "Editor",
+      "description": "La página del editor muestra un header mínimo con solo el logo centrado."
+    },
+    "settings": {
+      "title": "Configuración",
+      "description": "La página de configuración usa el mismo header que Inicio. Observa si el SearchBox se remonta al navegar aquí."
+    },
+    "profile": {
+      "title": "Perfil",
+      "description": "La página de perfil también usa el mismo header que Inicio. El SearchBox debería idealmente permanecer montado."
+    }
+  },
   "common": {
     "signIn": "Iniciar sesión",
     "share": "Compartir",
