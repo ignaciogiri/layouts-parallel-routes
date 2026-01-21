@@ -1,20 +1,22 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useTranslations } from "next-intl"
 import { Input } from "@/components/ui/input"
 import { Search } from "lucide-react"
 import { AnimatePresence, motion } from "motion/react"
 
-const suggestions = [
-  "Search for items",
-  "Find vintage clothing",
-  "Discover electronics",
-  "Look for furniture",
-]
-
 export function SearchBox() {
+  const t = useTranslations("search.suggestions")
   const [currentIndex, setCurrentIndex] = useState(0)
   const [inputValue, setInputValue] = useState("")
+
+  const suggestions = [
+    t("items"),
+    t("vintage"),
+    t("electronics"),
+    t("furniture"),
+  ]
 
   useEffect(() => {
     if (inputValue) return
@@ -24,7 +26,7 @@ export function SearchBox() {
     }, 2500)
 
     return () => clearInterval(interval)
-  }, [inputValue])
+  }, [inputValue, suggestions.length])
 
   const showPlaceholder = !inputValue
 

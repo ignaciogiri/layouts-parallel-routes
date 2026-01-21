@@ -1,0 +1,29 @@
+{
+  "common": {
+    "signIn": "Iniciar sesión",
+    "share": "Compartir",
+    "about": "Acerca de"
+  },
+  "search": {
+    "suggestions": {
+      "items": "Buscar artículos",
+      "vintage": "Encontrar ropa vintage",
+      "electronics": "Descubrir electrónica",
+      "furniture": "Buscar muebles"
+    }
+  },
+  "header": {
+    "aboutPage": "Página acerca de",
+    "customCenterSlot": "Slot central personalizado"
+  },
+  "demo": {
+    "title": "Demo de Rutas Paralelas",
+    "current": "Actual",
+    "route": "Ruta",
+    "expectedHeader": "Header esperado",
+    "problem": {
+      "title": "El problema",
+      "description": "Haz clic entre {home}, {settings} y {profile}. Comparten el mismo handler {handler}, pero la caja de búsqueda se desmonta y remonta en cada navegación (observa la animación reiniciarse)."
+    }
+  }
+}

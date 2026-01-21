@@ -1,0 +1,29 @@
+{
+  "common": {
+    "signIn": "Anmelden",
+    "share": "Teilen",
+    "about": "Über uns"
+  },
+  "search": {
+    "suggestions": {
+      "items": "Artikel suchen",
+      "vintage": "Vintage-Kleidung finden",
+      "electronics": "Elektronik entdecken",
+      "furniture": "Möbel suchen"
+    }
+  },
+  "header": {
+    "aboutPage": "Über-Seite",
+    "customCenterSlot": "Benutzerdefinierter mittlerer Slot"
+  },
+  "demo": {
+    "title": "Parallele Routen Demo",
+    "current": "Aktuell",
+    "route": "Route",
+    "expectedHeader": "Erwarteter Header",
+    "problem": {
+      "title": "Das Problem",
+      "description": "Klicke zwischen {home}, {settings} und {profile}. Sie teilen denselben {handler} Handler, aber die Suchbox wird bei jeder Navigation abgebaut und neu aufgebaut (beobachte den Neustart der Animation)."
+    }
+  }
+}

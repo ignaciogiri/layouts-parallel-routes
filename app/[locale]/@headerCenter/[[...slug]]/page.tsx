@@ -1,9 +1,12 @@
+"use client"
+
 import { use } from "react"
 import Link from "next/link"
+import { useTranslations } from "next-intl"
 import { SearchBox } from "@/components/search-box"
-import type { PageProps } from "@/types"
 
-export default function HeaderCenterSlot({ params }: PageProps<"/(site)/@headerCenter/[[...slug]]">) {
+export default function HeaderCenterSlot({ params }: { params: Promise<{ slug?: string[] }> }) {
+  const t = useTranslations("header")
   const { slug } = use(params)
   const path = slug?.join("/") ?? ""
 
@@ -11,8 +14,8 @@ export default function HeaderCenterSlot({ params }: PageProps<"/(site)/@headerC
     case "about":
       return (
         <div className="flex items-center gap-2">
-          <span className="px-2 py-1 bg-muted rounded text-xs font-medium">About page</span>
-          <span className="text-sm text-muted-foreground">Custom center slot</span>
+          <span className="px-2 py-1 bg-muted rounded text-xs font-medium">{t("aboutPage")}</span>
+          <span className="text-sm text-muted-foreground">{t("customCenterSlot")}</span>
         </div>
       )
     case "editor":
