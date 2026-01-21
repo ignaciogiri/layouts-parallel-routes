@@ -34,7 +34,7 @@ const routes: Array<{ path: Route; left: React.ReactNode; center: React.ReactNod
     path: "/profile" as Route,
     left: <span className="font-bold text-xs">Acme</span>,
     center: <span className="flex items-center gap-1 text-xs"><Search className="h-3 w-3" /> Search</span>,
-    right: <span className="flex items-center gap-1"><User className="h-3 w-3" /><Globe className="h-3 w-3" /></span>,
+    right: <span className="flex items-center gap-1"><Share className="h-3 w-3" /><Globe className="h-3 w-3" /></span>,
   },
 ]
 
