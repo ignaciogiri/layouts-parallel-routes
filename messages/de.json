@@ -54,11 +54,11 @@
     },
     "withCache": {
       "title": "Mit cacheComponents: true",
-      "description": "Komponenten werden nicht neu gemountet, ABER jede Route hat isolierten State. <code>/settings</code> und <code>/profile</code> haben separate SearchBox-Instanzen — Animation startet neu beim Wechseln."
+      "description": "Komponenten werden nicht neu gemountet, ABER jede Route hat isolierten State. <code>/settings</code> und <code>/profile</code> haben separate SearchBox-Instanzen - Animation startet neu beim Wechseln."
     },
     "homeException": {
       "title": "Die <code>/</code> Ausnahme",
-      "description": "Verwendet <code>default.tsx</code> (kein dynamisches Segment) — löst kein Remount-Verhalten aus."
+      "description": "Verwendet <code>default.tsx</code> (kein dynamisches Segment) - löst kein Remount-Verhalten aus."
     },
     "expected": {
       "title": "Erwartetes Verhalten",

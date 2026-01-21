@@ -54,11 +54,11 @@
     },
     "withCache": {
       "title": "Con cacheComponents: true",
-      "description": "Los componentes no se remontan, PERO cada ruta tiene estado aislado. <code>/settings</code> y <code>/profile</code> tienen instancias separadas de SearchBox — la animación se reinicia al cambiar entre ellas."
+      "description": "Los componentes no se remontan, PERO cada ruta tiene estado aislado. <code>/settings</code> y <code>/profile</code> tienen instancias separadas de SearchBox - la animación se reinicia al cambiar entre ellas."
     },
     "homeException": {
       "title": "La excepción de <code>/</code>",
-      "description": "Usa <code>default.tsx</code> (sin segmento dinámico) — no dispara el comportamiento de remontaje."
+      "description": "Usa <code>default.tsx</code> (sin segmento dinámico) - no dispara el comportamiento de remontaje."
     },
     "expected": {
       "title": "Comportamiento Esperado",

@@ -54,11 +54,11 @@
     },
     "withCache": {
       "title": "With cacheComponents: true",
-      "description": "Components don't remount, BUT each route has isolated state. <code>/settings</code> and <code>/profile</code> have separate SearchBox instances — animation resets when switching between them."
+      "description": "Components don't remount, BUT each route has isolated state. <code>/settings</code> and <code>/profile</code> have separate SearchBox instances - animation resets when switching between them."
     },
     "homeException": {
       "title": "The <code>/</code> exception",
-      "description": "Uses <code>default.tsx</code> (no dynamic segment) — doesn't trigger remount behavior."
+      "description": "Uses <code>default.tsx</code> (no dynamic segment) - doesn't trigger remount behavior."
     },
     "expected": {
       "title": "Expected Behavior",
